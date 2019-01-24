@@ -24,11 +24,11 @@ public class MainActivity extends AppCompatActivity {
     private IdeaViewPager viewPager;
     private IdeaScrollView ideaScrollView;
     private TextView text;
-    private LinearLayout header;
+    private LinearLayout llHeader;
     private RadioGroup radioGroup;
-    private LinearLayout headerParent;
-    private ImageView icon;
-    private View layer;
+    private LinearLayout llHeaderParent;
+    private ImageView ivIcon;
+    private View vLayer;
     private float currentPercentage = 0;
     private RadioGroup.OnCheckedChangeListener radioGroupListener = new RadioGroup
             .OnCheckedChangeListener() {
@@ -53,33 +53,33 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         StatusBarCompat.translucentStatusBar(this, true);
 
-        header = (LinearLayout) findViewById(R.id.header);
-        headerParent = (LinearLayout) findViewById(R.id.headerParent);
-        icon = (ImageView) findViewById(R.id.icon);
+        llHeader = (LinearLayout) findViewById(R.id.llHeader);
+        llHeaderParent = (LinearLayout) findViewById(R.id.llHeaderParent);
+        ivIcon = (ImageView) findViewById(R.id.ivIcon);
         radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
         ideaScrollView = (IdeaScrollView) findViewById(R.id.ideaScrollView);
         viewPager = (IdeaViewPager) findViewById(R.id.viewPager);
-        layer = findViewById(R.id.layer);
+        vLayer = findViewById(R.id.vLayer);
 
         Rect rectangle = new Rect();
         getWindow().getDecorView().getWindowVisibleDisplayFrame(rectangle);
-        ideaScrollView.setViewPager(viewPager, getMeasureHeight(headerParent) - rectangle.top);
-        icon.setImageAlpha(0);
+        ideaScrollView.setViewPager(viewPager, getMeasureHeight(llHeaderParent) - rectangle.top);
+        ivIcon.setImageAlpha(0);
         radioGroup.setAlpha(0);
         radioGroup.check(radioGroup.getChildAt(0).getId());
 
-        View one = findViewById(R.id.one);
-        View two = findViewById(R.id.two);
-        View four = findViewById(R.id.four);
-        View three = findViewById(R.id.three);
+        View llOne = findViewById(R.id.llOne);
+        View llTwo = findViewById(R.id.llTwo);
+        View ivThree = findViewById(R.id.ivThree);
+        View llFour = findViewById(R.id.llFour);
         ArrayList<Integer> araryDistance = new ArrayList<>();
 
         araryDistance.add(0);
-        araryDistance.add(getMeasureHeight(one) - getMeasureHeight(headerParent));
-        araryDistance.add(getMeasureHeight(one) + getMeasureHeight(two) - getMeasureHeight
-                (headerParent));
-        araryDistance.add(getMeasureHeight(one) + getMeasureHeight(two) + getMeasureHeight(three)
-                - getMeasureHeight(headerParent));
+        araryDistance.add(getMeasureHeight(llOne) - getMeasureHeight(llHeaderParent));
+        araryDistance.add(getMeasureHeight(llOne) + getMeasureHeight(llTwo) - getMeasureHeight
+                (llHeaderParent));
+        araryDistance.add(getMeasureHeight(llOne) + getMeasureHeight(llTwo) + getMeasureHeight(ivThree)
+                - getMeasureHeight(llHeaderParent));
 
         ideaScrollView.setArrayDistance(araryDistance);
 
@@ -89,9 +89,9 @@ public class MainActivity extends AppCompatActivity {
             public void onChanged(float percentage) {
 
                 int color = getAlphaColor(percentage > 0.9f ? 1.0f : percentage);
-                header.setBackgroundDrawable(new ColorDrawable(color));
+                llHeader.setBackgroundDrawable(new ColorDrawable(color));
                 radioGroup.setBackgroundDrawable(new ColorDrawable(color));
-                icon.setImageAlpha((int) ((percentage > 0.9f ? 1.0f : percentage) * 255));
+                ivIcon.setImageAlpha((int) ((percentage > 0.9f ? 1.0f : percentage) * 255));
                 radioGroup.setAlpha((percentage > 0.9f ? 1.0f : percentage) * 255);
 
                 setRadioButtonTextColor(percentage);

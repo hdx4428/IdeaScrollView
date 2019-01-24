@@ -14,7 +14,7 @@
             android:orientation="vertical">
 
             <LinearLayout
-                android:id="@+id/one"
+                android:id="@+id/llOne"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -31,7 +31,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/two"
+                android:id="@+id/llTwo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -51,80 +51,44 @@
                 android:textColor="#000000" />
 
             <ImageView
-                android:id="@+id/three"
+                android:id="@+id/ivThree"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:scaleType="fitXY"
                 android:src="@drawable/four" />
 
             <LinearLayout
-                android:id="@+id/four"
+                android:id="@+id/llFour"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="4444444444444"
-                    android:textColor="#000000" />
+
 
                 <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="1000dp"
                     android:scaleType="fitXY"
                     android:src="@drawable/five" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="6666666666666"
-                    android:textColor="#000000" />
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/six" />
 
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="5555555555555555"
-                    android:textColor="#000000" />
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/six" />
 
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="555555555555555555555"
-                    android:textColor="#000000" />
 
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/six" />
             </LinearLayout>
 
         </LinearLayout>
     </com.text.lg.ideascrollview.IdeaScrollView>
 
     <LinearLayout
-        android:id="@+id/headerParent"
+        android:id="@+id/llHeaderParent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <LinearLayout
-            android:id="@+id/header"
+            android:id="@+id/llHeader"
             android:layout_width="match_parent"
             android:layout_height="72dp"
             android:background="#00FFFFFF"
@@ -143,7 +107,7 @@
                 android:layout_weight="1" />
 
             <ImageView
-                android:id="@+id/icon"
+                android:id="@+id/ivIcon"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_gravity="center"
@@ -211,7 +175,7 @@
             </RadioGroup>
 
             <View
-                android:id="@+id/layer"
+                android:id="@+id/vLayer"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:background="#00FFFFFF" />
