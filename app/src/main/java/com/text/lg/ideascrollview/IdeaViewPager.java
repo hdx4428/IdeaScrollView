@@ -12,12 +12,13 @@ public class IdeaViewPager extends ViewPager {
     private Point point;
 
     public IdeaViewPager(Context context) {
-        this(context,null);
+        this(context, null);
     }
 
     public IdeaViewPager(Context context, AttributeSet attrs) {
         super(context, attrs);
-        WindowManager windowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+        WindowManager windowManager = (WindowManager) context.getSystemService(Context
+                .WINDOW_SERVICE);
         point = new Point();
         windowManager.getDefaultDisplay().getSize(point);
     }
@@ -25,6 +26,6 @@ public class IdeaViewPager extends ViewPager {
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-        setMeasuredDimension(point.x,point.x);
+        setMeasuredDimension(point.x, point.x);
     }
 }

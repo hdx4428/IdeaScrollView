@@ -1,31 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
+    android:layout_height="match_parent">
 
     <com.text.lg.ideascrollview.IdeaScrollView
         android:id="@+id/ideaScrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <LinearLayout
                 android:id="@+id/one"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
+
+
                 <com.text.lg.ideascrollview.IdeaViewPager
                     android:id="@+id/viewPager"
                     android:layout_width="match_parent"
-                    android:background="@drawable/aa"
-                    android:layout_height="wrap_content"/>
-                <ImageView
-                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/one"/>
+                    android:background="@drawable/aa"
+                    android:scaleType="fitXY" />
+
+
             </LinearLayout>
 
             <LinearLayout
@@ -33,44 +35,83 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/two"/>
+
 
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/three"/>
+                    android:scaleType="fitXY"
+                    android:src="@drawable/three" />
             </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="33333333333"
+                android:textColor="#000000" />
 
             <ImageView
                 android:id="@+id/three"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/four"/>
+                android:scaleType="fitXY"
+                android:src="@drawable/four" />
+
             <LinearLayout
                 android:id="@+id/four"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-                <ImageView
-                    android:layout_width="match_parent"
+
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/five"/>
+                    android:text="4444444444444"
+                    android:textColor="#000000" />
 
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/six"/>
+                    android:scaleType="fitXY"
+                    android:src="@drawable/five" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="6666666666666"
+                    android:textColor="#000000" />
+
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/six"/>
+                    android:scaleType="fitXY"
+                    android:src="@drawable/six" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5555555555555555"
+                    android:textColor="#000000" />
+
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/six"/>
+                    android:scaleType="fitXY"
+                    android:src="@drawable/six" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="555555555555555555555"
+                    android:textColor="#000000" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/six" />
             </LinearLayout>
 
         </LinearLayout>
@@ -81,95 +122,99 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
         <LinearLayout
             android:id="@+id/header"
             android:layout_width="match_parent"
             android:layout_height="72dp"
-            android:paddingTop="24dp"
             android:background="#00FFFFFF"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingTop="24dp">
 
             <ImageView
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_gravity="center"
-                android:src="@drawable/back"
-                />
+                android:src="@drawable/back" />
+
             <View
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"/>
-          <ImageView
-              android:id="@+id/icon"
-              android:layout_width="30dp"
-              android:layout_height="30dp"
-              android:src="@drawable/aa"
-              android:layout_gravity="center"/>
-            <View
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"/>
+                android:layout_weight="1" />
+
             <ImageView
+                android:id="@+id/icon"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_gravity="center"
-                />
+                android:src="@drawable/aa" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center" />
 
         </LinearLayout>
 
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <RadioGroup
                 android:id="@+id/radioGroup"
-                android:background="#00FFFFFF"
                 android:layout_width="match_parent"
-                android:orientation="horizontal"
-                android:layout_height="48dp">
+                android:layout_height="48dp"
+                android:background="#00FFFFFF"
+                android:orientation="horizontal">
 
                 <RadioButton
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:button="@null"
-                    android:textColor="#00000000"
                     android:gravity="center"
-                    android:text="宝贝"/>
+                    android:text="宝贝"
+                    android:textColor="#00000000" />
 
                 <RadioButton
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:button="@null"
-                    android:textColor="#00000000"
                     android:gravity="center"
-                    android:text="评价"/>
+                    android:text="评价"
+                    android:textColor="#00000000" />
 
                 <RadioButton
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:button="@null"
-                    android:textColor="#00000000"
                     android:gravity="center"
-                    android:text="详情"/>
+                    android:text="详情"
+                    android:textColor="#00000000" />
 
                 <RadioButton
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:gravity="center"
                     android:button="@null"
-                    android:textColor="#00000000"
-                    android:text="推荐"/>
+                    android:gravity="center"
+                    android:text="推荐"
+                    android:textColor="#00000000" />
 
             </RadioGroup>
 
             <View
                 android:id="@+id/layer"
                 android:layout_width="match_parent"
-                android:background="#00FFFFFF"
-                android:layout_height="48dp"/>
+                android:layout_height="48dp"
+                android:background="#00FFFFFF" />
         </FrameLayout>
 
     </LinearLayout>

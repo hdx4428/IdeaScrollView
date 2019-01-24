@@ -19,17 +19,18 @@ public class IdeaScrollView extends ScrollView {
     private int headerHeight;
 
     public IdeaScrollView(Context context) {
-        this(context,null,0);
+        this(context, null, 0);
     }
 
     public IdeaScrollView(Context context, AttributeSet attrs) {
-        this(context, attrs,0);
+        this(context, attrs, 0);
     }
 
     public IdeaScrollView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
 
-        WindowManager windowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+        WindowManager windowManager = (WindowManager) context.getSystemService(Context
+                .WINDOW_SERVICE);
         point = new Point();
         windowManager.getDefaultDisplay().getSize(point);
     }
@@ -38,22 +39,26 @@ public class IdeaScrollView extends ScrollView {
     protected void onScrollChanged(int l, int t, int oldl, int oldt) {
         super.onScrollChanged(l, t, oldl, oldt);
         if (viewPager != null && t != oldt) {
-            viewPager.setTranslationY(t/2);
+            viewPager.setTranslationY(t / 2);
         }
 
-        if(viewPager!=null&&t<=point.x-headerHeight&&getOnScrollChangedColorListener()!=null){
+        if (viewPager != null && t <= point.x - headerHeight && getOnScrollChangedColorListener()
+                != null) {
 
-            getOnScrollChangedColorListener().onChanged(Math.abs(t)/Float.valueOf(point.x-headerHeight));
-            if(t<=(point.x-headerHeight)/2){
-                getOnScrollChangedColorListener().onChangedFirstColor(t/(point.x-headerHeight)/2);
-            }else{
-                getOnScrollChangedColorListener().onChangedSecondColor((t-(point.x-headerHeight)/2)/(point.x-headerHeight)/2);
+            getOnScrollChangedColorListener().onChanged(Math.abs(t) / Float.valueOf(point.x -
+                    headerHeight));
+            if (t <= (point.x - headerHeight) / 2) {
+                getOnScrollChangedColorListener().onChangedFirstColor(t / (point.x -
+                        headerHeight) / 2);
+            } else {
+                getOnScrollChangedColorListener().onChangedSecondColor((t - (point.x -
+                        headerHeight) / 2) / (point.x - headerHeight) / 2);
             }
 
         }
 
-        int currentPosition = getCurrentPosition(t,arrayDistance);
-        if(currentPosition!=position&&getOnSelectedIndicateChangedListener()!=null){
+        int currentPosition = getCurrentPosition(t, arrayDistance);
+        if (currentPosition != position && getOnSelectedIndicateChangedListener() != null) {
             getOnSelectedIndicateChangedListener().onSelectedChanged(currentPosition);
         }
         this.position = currentPosition;
@@ -62,11 +67,11 @@ public class IdeaScrollView extends ScrollView {
     private int getCurrentPosition(int t, ArrayList<Integer> arrayDistance) {
 
         int index = 0;
-        for (int i=0;i<arrayDistance.size();i++){
-            if(i==arrayDistance.size()-1){
+        for (int i = 0; i < arrayDistance.size(); i++) {
+            if (i == arrayDistance.size() - 1) {
                 index = i;
-            }else {
-                if(t>=arrayDistance.get(i)&&t<arrayDistance.get(i+1)){
+            } else {
+                if (t >= arrayDistance.get(i) && t < arrayDistance.get(i + 1)) {
                     index = i;
                     break;
                 }
@@ -79,16 +84,16 @@ public class IdeaScrollView extends ScrollView {
         scrollToPosition(position);
     }
 
-    private void scrollToPosition(int position){
-        scrollTo(0,arrayDistance.get(position));
+    private void scrollToPosition(int position) {
+        scrollTo(0, arrayDistance.get(position));
     }
 
-    public void setViewPager(IdeaViewPager viewPager,int headerHeight){
+    public void setViewPager(IdeaViewPager viewPager, int headerHeight) {
         this.viewPager = viewPager;
         this.headerHeight = headerHeight;
     }
 
-    public interface OnScrollChangedColorListener{
+    public interface OnScrollChangedColorListener {
 
         void onChanged(float percentage);
 
@@ -98,7 +103,7 @@ public class IdeaScrollView extends ScrollView {
 
     }
 
-    public interface OnSelectedIndicateChangedListener{
+    public interface OnSelectedIndicateChangedListener {
 
         void onSelectedChanged(int position);
     }
@@ -111,7 +116,8 @@ public class IdeaScrollView extends ScrollView {
         return onScrollChangedColorListener;
     }
 
-    public void setOnScrollChangedColorListener(OnScrollChangedColorListener onScrollChangedColorListener) {
+    public void setOnScrollChangedColorListener(OnScrollChangedColorListener
+                                                        onScrollChangedColorListener) {
         this.onScrollChangedColorListener = onScrollChangedColorListener;
     }
 
@@ -140,7 +146,8 @@ public class IdeaScrollView extends ScrollView {
         return onSelectedIndicateChangedListener;
     }
 
-    public void setOnSelectedIndicateChangedListener(OnSelectedIndicateChangedListener onSelectedIndicateChangedListener) {
+    public void setOnSelectedIndicateChangedListener(OnSelectedIndicateChangedListener
+                                                             onSelectedIndicateChangedListener) {
         this.onSelectedIndicateChangedListener = onSelectedIndicateChangedListener;
     }
 }
